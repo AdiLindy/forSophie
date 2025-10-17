@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    const date = new Date();
+
+    var secs = date.getSeconds();
+    var min = date.getMinutes();
+    var hours = date.getHours();
+
+
+
+    var days = date.getDate();
+
+    if(date.getMonth() == 9){
+      days = 31 - days + 23;
+    }
+    var weeks = Math.round(days/7);
+    var untilWeek = Math.round((days-6)/7);
+
+    const poems = ["Hey little bab, hopefully ur opening this on call WITH ME. I would keep opening my calander to see how much longer I'd have to wait so I wanted to make this for the both of us. I've been taking it week by week and luckily there aren't that many weeks left! I love you so so much, keep checking back here for s new messege every weeks. LOBE YOU!"
+    , "4 weeks! it feels so little and so doable. After this is 3. And then 2! Then 1!!!! I am so excited for my bracelet. I have been led to believe is will come around this week. I've really warmed up to the idea of wearing on recently; very excited. Remember my love is like an ecosystem that goes every day and you are the sun that feeds it. love you!"
+    , "3 weeks is easy!? yes. Hey bab. I loba u! I'm on call with you right now and you are talking about how much u like my jacket. I hope my bracelet is here I'm very very very excited, I think I'll like it a lot. Our work is really paying off right now. I MISS YOU SO SO MUCH! I hope ur using this but if not it ok. I'm sure you will though. I LOVE YOU SO MUCH! if you want to know how much just call me."
+    , "TWO. WEEKS. I really all your presents have come by now but idk. probably not the one I mailed I'd guess. I could see this feeling like a so close but so far type thing but in just a couple days it will be one more week. And even after we see eachother Christmas is right around the corner. so so very excited to do it all with you. LOVE YOU!!!!"
+    , "one more week. I wish that was now and I could just fast forward. I'm probably HUGE by now but we will have to see. I really hope so. I doubt it but I really want to start seeing lower abs. I imagine we are going to be so very excited and all over eachother. All our presents have been delievered and there's only one more thing to come. So exciting! "
+    , "We did it! I love you so much! so excited to see you!!!!"];
+    
+  </script>
+
+  <style>
+    body {
+      background-image: linear-gradient(to right, rgb(50, 10, 10), rgb(50, 10, 50));
+      overscroll-behavior: contain;
+    }
+
+    .timeText {
+      transition: ease 3s;
+    }
+
+
+
+    #weeksText {
+      opacity: 0;
+    }
+
+    #daysText {
+      opacity: 0;
+      transition: ease 5s;
+    }
+
+    #hoursText {
+      opacity: 0;
+      transition: ease 9s;
+    }
+
+    #minutesText {
+      opacity: 0;
+      transition: ease 12s;
+    }
+
+    #secondsText {
+      opacity: 0;
+      transition: ease 15s;
+    }
+
+    #me{
+      transform: scale(0.5);
+      position: fixed;
+      left: -400px;
+      top: 370px;
+      width: 1000px;
+      height: 1000px;
+    }
+
+    #her{
+      transform: scale(0.5);   
+      position: fixed;
+      left: 1230px;   
+      top: 400px;
+      width: 1000px;
+      height: 1000px;
+    }
+
+    #poem{
+      color: white;
+      margin: 300px;
+    }
+
+    #plane {
+      position: fixed;
+      width: 400px;
+      height: 400px;
+      transform-origin: 200px 200px 0;
+      transform: translate(-200px, -200px)
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+  <div id="plane">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+      <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="purple"/>
+        <stop offset="100%" stop-color="red"/>
+      </linearGradient>
+      <path class="plane" fill="url(#textGrad)" d="M 23 9 Q 26 0 29 9 C 29 11 29 13 29 15 L 48 25 C 52 27 51 29 48 28 L 29 23 L 29 37 L 35 42 L 34 43 L 28 40 C 27 43 25 43 24 40 L 18 43 L 17 42 L 23 37 L 23 23 L 5 28 C 2 29 1 27 5 25 L 23 15 C 23 13 23 11 23 9"/>
+   
+    </svg>
+  </div>
+
+
+  <div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500">
+      <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="purple"/>
+        <stop offset="100%" stop-color="red"/>
+      </linearGradient>
+
+      <text id="weeksText" class="timeText" x="370" y="450" fill="url(#textGrad)" font-size="110" font-family="monospace">weeks</text>
+      <text id="daysText" class="timeText" x="380" y="350" fill="url(#textGrad)" font-size="75" font-family="monospace">days</text>
+      <text id="hoursText" class="timeText" x="380" y="250" fill="url(#textGrad)" font-size="75" font-family="monospace">hours</text>
+      <text id="minutesText" class="timeText" x="380" y="180" fill="url(#textGrad)" font-size="50" font-family="monospace">min</text>
+      <text id="secondsText" class="timeText" x="380" y="130" fill="url(#textGrad)" font-size="50" font-family="monospace">sec</text>
+
+      <text id="untilWeek" class="timeText" x="360" y="450" fill="url(#textGrad)" font-size="500" font-family="monospace">P</text>
+    </svg>
+
+
+
+
+
+    <div id="me">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+        <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="purple"/>
+          <stop offset="100%" stop-color="red"/>
+        </linearGradient>
+        
+        <path fill="url(#textGrad)" d="M 10 2 A 1 1 0 0 0 10 15 A 1 1 0 0 0 10 2 M 13 18 L 4 18 C 3 18 2 19 2 21 C 2 23 3 27 3 31 C 3 34 3 37 1 43 L 11 43 L 14 26 L 25 32 C 27 33 30 32 28 29 L 15 22 L 15 20 C 15 19 15 18 13 18"/>
+
+      </svg>
+    </div>
+
+    <div id="her">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+        <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="purple"/>
+          <stop offset="100%" stop-color="red"/>
+        </linearGradient>
+        
+        <path fill="url(#textGrad)" d="M 17 1 A 1 1 0 0 0 17 13 A 1 1 0 0 0 17 1 M 22 2 C 26 5 24 12 32 15 C 27 12 30 4 22 2 M 2 12 C 0 10 2 7 6 10 L 13 15 L 20 16 C 22 16 22 17 23 18 L 30 36 L 11 36 L 13 20 L 2 12"/>
+
+      </svg>
+    </div>
+
+    <p id="poem">
+      dhsfbsbivnipsahfiu hsudhfbsdbgbsbufybsdyufghbuybs duyb fsbdyufgeyusbgfryubsyugbsuxb vux      dhsfbsbivnipsahfiu hsudhfbsdbgbsbufybsdyufghbuybs duyb fsbdyufgeyusbgfryubsyugbsuxb vux      dhsfbsbivnipsahfiu hsudhfbsdbgbsbufybsdyufghbuybs duyb fsbdyufgeyusbgfryubsyugbsuxb vux
+    </p>
+
+
+  </div>
+
+  <script>
+
+    document.getElementById("poem").textContent = poems[5-weeks];
+
+
+
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const timeText = document.getElementById("untilWeek");
+
+      function updateTime() {
+        const date = new Date();
+        let secs = date.getSeconds();
+        let min = date.getMinutes();
+        let hours = date.getHours();
+        let days = date.getDate();
+
+        if (date.getMonth() === 9) {
+          days = 31 - days + 23;
+        }
+
+        const weeks = Math.round(days / 7);
+
+        timeText.textContent = `${weeks}`;
+        document.getElementById("daysText").textContent = `${days} days`;
+        document.getElementById("hoursText").textContent = `${hours} hours`;
+        document.getElementById("minutesText").textContent = `${min} minutes`;
+        document.getElementById("secondsText").textContent = `${secs} seconds`;
+      }
+
+      setInterval(updateTime, 1000);
+      updateTime();
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 2) {
+          timeText.style.transform = "translateX(-260px)";
+          ["weeksText","daysText","hoursText","minutesText","secondsText"].forEach(id => {
+            document.getElementById(id).style.opacity = "1";
+          });
+        } else {
+          timeText.style.transform = "translateX(0)";
+          ["weeksText","daysText","hoursText","minutesText","secondsText"].forEach(id => {
+            document.getElementById(id).style.opacity = "0";
+          });
+        }
+
+        
+        var sc = window.scrollY;
+
+        if( (((sc*4)-400)-(1230-(sc*4))) < 1580    ){
+          document.getElementById("me").style.transform =`scale(0.5) translateX(${sc*4}px)`;
+          document.getElementById("her").style.transform =`scale(0.5) translateX(${-sc*4}px)`;
+        }
+        else{
+          document.getElementById("me").style.transform =`scale(0.5) translateX(${1600}px)`;
+          document.getElementById("her").style.transform =`scale(0.5) translateX(${-1600}px)`;
+        }
+
+      });
+    });
+
+    window.addEventListener("mousedown", (e) => {
+      const plane = document.querySelector("#plane");
+      fly(0, plane, e.clientX-200, e.clientY-180);
+    });
+
+
+    function fly(t, el, x, y){      
+
+
+      if(t > 90){
+        el.style.transform = `translate(${x + t}px, ${y - t}px) rotateZ(45deg) rotateY(${0}deg)`;
+      }
+      else
+        el.style.transform = `translate(${x + t}px, ${y - t}px) rotateZ(45deg) rotateY(${90-t}deg)`;
+      
+      if (t < 750) {
+        requestAnimationFrame(() => fly(t + 2, el, x, y)); 
+      }
+    }
+
+  </script>
+</body>
