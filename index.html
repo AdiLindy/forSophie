@@ -16,7 +16,7 @@
       days = 31 - days + 23;
     }
     var weeks = Math.floor(days/7);
-    var untilWeek = Math.round((days-6)/7);
+    var untilWeek = Math.floor((days-6)/7);
 
     const poems = ["Hey little bab, hopefully ur opening this on call WITH ME. I would keep opening my calander to see how much longer I'd have to wait so I wanted to make this for the both of us. I've been taking it week by week and luckily there aren't that many weeks left! I love you so so much, keep checking back here for s new messege every weeks. LOBE YOU!"
     , "4 weeks! it feels so little and so doable. After this is 3. And then 2! Then 1!!!! I am so excited for my bracelet. I have been led to believe is will come around this week. I've really warmed up to the idea of wearing on recently; very excited. Remember my love is like an ecosystem that goes every day and you are the sun that feeds it. love you!"
@@ -187,7 +187,7 @@
           days = 31 - days + 23;
         }
 
-        const weeks = Math.round(days / 7);
+        const weeks = Math.floor(days / 7);
 
         timeText.textContent = `${weeks}`;
         document.getElementById("daysText").textContent = `${days} days`;
