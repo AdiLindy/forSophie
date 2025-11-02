@@ -15,30 +15,31 @@
     if(date.getMonth() == 9){
       days = 31 - days + 23;
     }
-    var weeks = Math.floor(days/7);
-    var untilWeek = Math.floor((days-6)/7);
+    else
+      days = 23 - days;
+    var weeks = Math.round(days/7);
+    var untilWeek = Math.round((days-6)/7);
 
     const poems = ["Hey little bab, hopefully ur opening this on call WITH ME. I would keep opening my calander to see how much longer I'd have to wait so I wanted to make this for the both of us. I've been taking it week by week and luckily there aren't that many weeks left! I love you so so much, keep checking back here for s new messege every weeks. LOBE YOU!"
     , "4 weeks! it feels so little and so doable. After this is 3. And then 2! Then 1!!!! I am so excited for my bracelet. I have been led to believe is will come around this week. I've really warmed up to the idea of wearing on recently; very excited. Remember my love is like an ecosystem that goes every day and you are the sun that feeds it. love you!"
     , "3 weeks is easy!? yes. Hey bab. I loba u! I'm on call with you right now and you are talking about how much u like my jacket. I hope my bracelet is here I'm very very very excited, I think I'll like it a lot. Our work is really paying off right now. I MISS YOU SO SO MUCH! I hope ur using this but if not it ok. I'm sure you will though. I LOVE YOU SO MUCH! if you want to know how much just call me."
     , "TWO. WEEKS. I really all your presents have come by now but idk. probably not the one I mailed I'd guess. I could see this feeling like a so close but so far type thing but in just a couple days it will be one more week. And even after we see eachother Christmas is right around the corner. so so very excited to do it all with you. LOVE YOU!!!!"
     , "one more week. I wish that was now and I could just fast forward. I'm probably HUGE by now but we will have to see. I really hope so. I doubt it but I really want to start seeing lower abs. I imagine we are going to be so very excited and all over eachother. All our presents have been delievered and there's only one more thing to come. So exciting! "
-    , "We did it! I love you so much! so excited to see you!!!!"];
+    , "Well well well. I had to redo this because I did it WRONG the first time. But it ok. I'm missing you so much as I'm writting this and I think I'm still going to be so nervous to see you again but excited above all else. You are my light, you are my life. I'm sure this will all be worth it. I love you so much Sophie!"];
     
   </script>
 
   <style>
-    html {
-      background-image: linear-gradient(to right, rgb(50, 10, 10), rgb(50, 10, 50));
-    }
     body {
       background-image: linear-gradient(to right, rgb(50, 10, 10), rgb(50, 10, 50));
-      overscroll-behavior: none;
+      overscroll-behavior: contain;
     }
 
     .timeText {
       transition: ease 3s;
     }
+
+
 
     #weeksText {
       opacity: 0;
@@ -186,8 +187,9 @@
         if (date.getMonth() === 9) {
           days = 31 - days + 23;
         }
+        else days = 23 - days;
 
-        const weeks = Math.floor(days / 7);
+        const weeks = Math.round(days / 7);
 
         timeText.textContent = `${weeks}`;
         document.getElementById("daysText").textContent = `${days} days`;
